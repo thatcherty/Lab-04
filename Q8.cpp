@@ -21,8 +21,8 @@ int main() {
     //Variables to track rounds and character placement
     int quadrant, round = 0;
 
-    //Flag to control game loop
-    bool play_flag = true;
+    //Flag to control game loop and win status
+    bool play_flag = true, win_flag = false;
 
     cout << "Welcome to Tic Tac Toe!" << endl << endl;
 
@@ -152,27 +152,35 @@ int main() {
             if (one == five && one == nine) {
                 cout << "Character " << one << " won!" << endl;
                 play_flag = false;
+                win_flag = true;
             } else if (one == four && one == seven) {
                 cout << "Character " << one << " won!" << endl;
                 play_flag = false;
+                win_flag = true;
             } else if (two == five && two == eight) {
                 cout << "Character " << two << " won!" << endl;
                 play_flag = false;
+                win_flag = true;
             } else if (three == six && three == nine) {
                 cout << "Character " << three << " won!" << endl;
                 play_flag = false;
+                win_flag = true;
             } else if (three == five && three == seven) {
                 cout << "Character " << three << " won!" << endl;
                 play_flag = false;
+                win_flag = true;
             } else if (one == two && one == three) {
                 cout << "Character " << one << " won!" << endl;
                 play_flag = false; 
+                win_flag = true;
             } else if (four == five && four == six) {
                 cout << "Character " << four << " won!" << endl;
                 play_flag = false;
+                win_flag = true;
             } else if (seven == eight && seven == nine) {
                 cout << "Character " << seven << " won!" << endl;
                 play_flag = false;
+                win_flag = true;
             } 
             round++;
         }
@@ -289,32 +297,40 @@ int main() {
             if (one == five && one == nine) {
                 cout << "Character " << one << " won!" << endl;
                 play_flag = false;
+                win_flag = true;
             } else if (one == four && one == seven) {
                 cout << "Character " << one << " won!" << endl;
                 play_flag = false;
+                win_flag = true;
             } else if (two == five && two == eight) {
                 cout << "Character " << two << " won!" << endl;
                 play_flag = false;
+                win_flag = true;
             } else if (three == six && three == nine) {
                 cout << "Character " << three << " won!" << endl;
                 play_flag = false;
+                win_flag = true;
             } else if (three == five && three == seven) {
                 cout << "Character " << three << " won!" << endl;
                 play_flag = false;
+                win_flag = true;
             } else if (one == two && one == three) {
                 cout << "Character " << one << " won!" << endl;
                 play_flag = false; 
+                win_flag = true;
             } else if (four == five && four == six) {
                 cout << "Character " << four << " won!" << endl;
                 play_flag = false;
+                win_flag = true;
             } else if (seven == eight && seven == nine) {
                 cout << "Character " << seven << " won!" << endl;
                 play_flag = false;
+                win_flag = true;
             } 
             round++;
         }
         //output only if no player wins and board is full
-        if (round >= 9) {
+        if (round >= 9 && !win_flag) {
             cout << "Game over. There is no winner." << endl;
             play_flag = false;
         }
